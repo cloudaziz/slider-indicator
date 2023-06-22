@@ -3,6 +3,12 @@
     --width: 8px;
 }
 
+:root {
+    --gap: 10px;
+    --width: 8px;
+    --position: -4px
+}
+
 *,
 *::before,
 *::after {
@@ -31,6 +37,7 @@ body {
     list-style: none;
     display: flex;
     gap: var(--gap);
+    /* background-color: green; */
 }
 
 .nav-list {
@@ -38,25 +45,19 @@ body {
     width: var(--width);
     height: var(--width);
     border-radius: 5px;
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    color: #fff;
     cursor: pointer;
 }
 
 
-
-.indicator {
+.nav-content::before {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    transform: translateX(var(--position));
 
     width: calc(var(--width) * 2);
     height: var(--width);
-
     border-radius: 4px;
     background-color: green;
     text-align: center;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

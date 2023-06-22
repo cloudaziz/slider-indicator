@@ -9,10 +9,16 @@ let gap = totaItemlGap / gapItems;
 
 linkItems.forEach((linkItem, index) => {
   linkItem.addEventListener('click', () => {
+    document.querySelector('.active').classList.remove('active');
+    linkItem.classList.add('active');
+
     let itemWidth = linkItem.clientWidth;
 
-    let indicator = document.querySelector('.indicator');
-
-    indicator.style.left = `${index * itemWidth + index * gap}px`;
+    navConternt.style.setProperty(
+      '--position',
+      `${index * itemWidth + index * gap - gap / 2}px`
+    );
   });
 });
+
+// indicator.style.left = `${index * itemWidth + index * gap}px`;
