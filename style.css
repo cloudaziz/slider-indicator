@@ -1,0 +1,62 @@
+:root {
+    --gap: 10px;
+    --width: 8px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border: 1px solid red;
+    display: grid;
+    place-items: center;
+}
+
+.nav-content {
+    position: relative;
+    list-style: none;
+    display: flex;
+    gap: var(--gap);
+}
+
+.nav-list {
+    background-color: green;
+    width: var(--width);
+    height: var(--width);
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: calc(var(--width) * 2);
+    height: var(--width);
+
+    border-radius: 4px;
+    background-color: green;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
